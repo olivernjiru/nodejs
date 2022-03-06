@@ -56,6 +56,7 @@ To do so, create one folder name lib and create a new file name db.js inside thi
 13.    }
 14.  });  
 15. module.exports = connection;
+```
 
 Step 4. Create Server.js File
 In your app root directory, create a new file name server.js and add:
