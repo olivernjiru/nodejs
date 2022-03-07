@@ -1,6 +1,6 @@
 var express = require('express');
 var router = express.Router();
-var connection  = require('../lib/db');
+var connection  = require('./lib/db');
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
@@ -91,6 +91,7 @@ router.get('/edit/(:id)', function(req, res, next){
         }            
     })
 })
+
 // EDIT USER POST ACTION
 router.post('/update/:id', function(req, res, next) {
     req.assert('name', 'Name is required').notEmpty()           //Validate name           //Validate age
