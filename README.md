@@ -10,31 +10,41 @@ After successfully creating yourname folder in your system, install nodejs in yo
 cd yourname
 npm install
 ```
+<br>
 
-Step 2. Install flash,validator,session ,override MySQL Libraries into your node js express crud + MySQL application by executing the following command on terminal:
-```
-npm install express-flash --save
-npm install express-session --save
-npm install express-validator --save
-npm install method-override --save
-npm install mysql --save
-```
-
+Step 2. Install flash,validator,session ,override MySQL Libraries into your node js express crud + MySQL application.
+You will install:
 express-flash
 Is an extension of connect-flash with the ability to define a flash message and render it without redirecting the request.
 In this node js mysql crud tutorial express flash is used to display a warning, error and information message
+```
+npm install express-flash --save
+```
 
 express-session
-Express-session is used to made a session as like in PHP. In this node js mysql crud tutorial, session is needed as the express requirement of express-flash.
+Used to made a session as like in PHP. In this node js mysql crud tutorial, session is needed as the express requirement of express-flash.
+```
+npm install express-session --save
+```
 
 express-validator
-Express validator is used to validate form data it is easy to use. express-validator highly effective and efficient way to accelerate the creation of applications.
+Used to validate form data it is easy to use. express-validator highly effective and efficient way to accelerate the creation of applications.
+```
+npm install express-validator --save
+```
 
 method-override
 NPM is used to run a DELETE and PUT method from an HTML form. In several web browsers only support GET and POST methods.
+```
+npm install method-override --save
+```
 
 MySQL
 Driver to connect node.js with MySQL
+```
+npm install mysql --save
+```
+<br>
 
 Step 3. Connect to Node js Express CRUD App
 To do so, create one folder name lib and create a new file name db.js inside this folder. We will connect node js to mysql using this file
@@ -57,6 +67,7 @@ To do so, create one folder name lib and create a new file name db.js inside thi
 14.  });  
 15. module.exports = connection;
 ```
+<br>
 
 Step 4. Create Server.js File
 In your app root directory, create a new file name server.js and add:
@@ -124,6 +135,7 @@ In your app root directory, create a new file name server.js and add:
 61. });
 62.  module.exports = app;
 ```
+<br>
 
 Step 5. Create CRUD Routes
 To create crud route file name customers.js, visit inside routes folder and create this file and add:
@@ -278,6 +290,7 @@ res.redirect('/customers')
 })
 module.exports = router;
 ```
+<br>
 
 Step 6. Create Views
 Create a folder named customers inside the views folder
@@ -398,6 +411,7 @@ Create edit.ejs which will edit data in the form:
 </body>
 </html>
 ```
+<br>
 
 Step 7. Start Node Express js Crud + MySQL app
 To do so, run the command:
