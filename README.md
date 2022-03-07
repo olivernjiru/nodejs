@@ -51,21 +51,21 @@ To do so, create one folder name lib and create a new file name db.js inside thi
 
 <bold>lib/db.js</bold>
 ```
-1. var mysql=require('mysql');
-2.  var connection=mysql.createConnection({
-3.    host:'localhost',
-4.    user:'your username',
-5.    password:'your password',
-6.    database:'your database name'
-7.  });
-8. connection.connect(function(error){
-9.    if(!!error){
-10.      console.log(error);
-11.    }else{
-12.      console.log('Connected!:)');
-13.    }
-14.  });  
-15. module.exports = connection;
+var mysql=require('mysql');
+var connection=mysql.createConnection({
+host:'localhost',
+user:'your username',
+password:'your password',
+database:'your database name'
+});
+connection.connect(function(error){
+if(!!error){
+console.log(error);
+}else{
+console.log('Connected!:)');
+}
+});  
+module.exports = connection;
 ```
 <hr>
 
