@@ -49,7 +49,7 @@ npm install mysql --save
 Step 3. Connect to Node js Express CRUD App
 To do so, create one folder name lib and create a new file name db.js inside this folder. We will connect node js to mysql using this file
 
-<strong>lib/db.js</strong>
+<bold>lib/db.js</bold>
 ```
 1. var mysql=require('mysql');
 2.  var connection=mysql.createConnection({
