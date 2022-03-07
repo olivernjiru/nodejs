@@ -21,7 +21,7 @@ npm install mysql --save
 ```
 
 express-flash
-Flash is an extension of connect-flash with the ability to define a flash message and render it without redirecting the request.
+Is an extension of connect-flash with the ability to define a flash message and render it without redirecting the request.
 In this node js mysql crud tutorial express flash is used to display a warning, error and information message
 
 express-session
