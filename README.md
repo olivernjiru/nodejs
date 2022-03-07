@@ -70,7 +70,8 @@ module.exports = connection;
 ```
 <hr>
 
-Step 4. Creating Server.js File.
+Step 4. Create Server.js File.
+
 In your app root directory, create a new file name server.js and add:
 ```
 var createError = require('http-errors');
