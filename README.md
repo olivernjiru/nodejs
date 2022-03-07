@@ -53,87 +53,88 @@ To do so, create one folder name lib and create a new file name db.js inside thi
 ```
 var mysql=require('mysql');
 var connection=mysql.createConnection({
-host:'localhost',
-user:'your username',
-password:'your password',
-database:'your database name'
+    host:'localhost',
+    user:'your username',
+    password:'your password',
+    database:'your database name'
 });
 connection.connect(function(error){
-if(!!error){
-console.log(error);
-}else{
-console.log('Connected!:)');
-}
+    if(!!error){
+        console.log(error);
+    }
+    else{
+        console.log('Connected!:)');
+    }
 });  
 module.exports = connection;
 ```
 <hr>
 
-Step 4. Create Server.js File
+Step 4. Creating Server.js File.
 In your app root directory, create a new file name server.js and add:
 ```
-1. var createError = require('http-errors');
-2.  var express = require('express');
-3.  var path = require('path');
-4.  var cookieParser = require('cookie-parser');
-5.  var logger = require('morgan');
-6.  var expressValidator = require('express-validator');
-7.  var flash = require('express-flash');
-8.  var session = require('express-session');
-9.  var bodyParser = require('body-parser');
-10.  
-11.  var mysql = require('mysql');
-12.  var connection  = require('./lib/db');
-13.  
-14.  var indexRouter = require('./routes/index');
-15.  var usersRouter = require('./routes/users');
-16.  var customersRouter = require('./routes/customers');
-17.  
-18.  var app = express();
-19.  
-20. // view engine setup
-21.  app.set('views', path.join(__dirname, 'views'));
-22.  app.set('view engine', 'ejs');
-23.  
-24.  app.use(logger('dev'));
-25.  app.use(bodyParser.json());
-26.  app.use(bodyParser.urlencoded({ extended: true }));
-27.  app.use(cookieParser());
-28.  app.use(express.static(path.join(__dirname, 'public')));
-29.  
-30.  app.use(session({ 
-31.      secret: '123456cat',
-32.      resave: false,
-33.      saveUninitialized: true,
-34.      cookie: { maxAge: 60000 }
-35.  }))
-36.  
-37.  app.use(flash());
-38.  app.use(expressValidator());
-39.  
-40.  app.use('/', indexRouter);
-41.  app.use('/users', usersRouter);
-42.  app.use('/customers', customersRouter);
-43.  
-44.  // catch 404 and forward to error handler
-45.  app.use(function(req, res, next) {
-46.    next(createError(404));
-47.  });
-48.  
-49.  // error handler
-50.  app.use(function(err, req, res, next) {
-51.    // set locals, only providing error in development
-52.    res.locals.message = err.message;
-53.    res.locals.error = req.app.get('env') === 'development' ? err : {};
-54.  // render the error page
-55.    res.status(err.status || 500);
-56.    res.render('error');
-57.  });
-58. // port must be set to 3000 because incoming http requests are routed from port 80 to port 8080
-59. app.listen(3000, function () {
-60.     console.log('Node app is running on port 3000');
-61. });
-62.  module.exports = app;
+var createError = require('http-errors');
+var express = require('express');
+var path = require('path');
+var cookieParser = require('cookie-parser');
+var logger = require('morgan');
+var expressValidator = require('express-validator');
+var flash = require('express-flash');
+var session = require('express-session');
+var bodyParser = require('body-parser');
+ 
+var mysql = require('mysql');
+var connection  = require('./lib/db');
+  
+var indexRouter = require('./routes/index');
+var usersRouter = require('./routes/users');
+var customersRouter = require('./routes/customers');
+ 
+var app = express();
+ 
+// view engine setup
+app.set('views', path.join(__dirname, 'views'));
+app.set('view engine', 'ejs');
+
+app.use(logger('dev'));
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: true }));
+app.use(cookieParser());
+app.use(express.static(path.join(__dirname, 'public')));
+
+app.use(session({ 
+      secret: '123456cat',
+      resave: false,
+      saveUninitialized: true,
+      cookie: { maxAge: 60000 }
+  }))
+  
+  app.use(flash());
+  app.use(expressValidator());
+  
+  app.use('/', indexRouter);
+  app.use('/users', usersRouter);
+  app.use('/customers', customersRouter);
+  
+  // catch 404 and forward to error handler
+  app.use(function(req, res, next) {
+    next(createError(404));
+  });
+
+  // error handler
+  app.use(function(err, req, res, next) {
+    // set locals, only providing error in development
+    res.locals.message = err.message;
+    res.locals.error = req.app.get('env') === 'development' ? err : {};
+  // render the error page
+    res.status(err.status || 500);
+    res.render('error');
+  });
+ // port must be set to 3000 because incoming http requests are routed from port 80 to port 8080
+ app.listen(3000, function () {
+     console.log('Node app is running on port 3000');
+ });
+  module.exports = app;
 ```
 <hr>
 
