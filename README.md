@@ -1,5 +1,11 @@
 # CRUD with Node Express Js
 
+Install nodejs express
+```
+npm install express-generator -g
+```
+
+
 Step 1. Create the express project with the name yourname:
 ```
 express --view=ejs yourname
