@@ -1,8 +1,13 @@
 # CRUD with Node Express Js
 
+Install express
+```
+npm install express
+```
+
 Install nodejs express
 ```
-npm install express-generator -g
+npm install -g express
 ```
 
 
